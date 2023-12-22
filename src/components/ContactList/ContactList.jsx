@@ -5,7 +5,7 @@ const ContactList = ({ contacts, handleDelete }) => (
     <StyledList>
       {contacts.map((contact, id) => (
         <StyledItem key={id}>
-          {contact.name}: {contact.number}
+          {contact.name}: {contact.phone}
           <StyledButton type="button" onClick={() => handleDelete(contact.id)}>
             Delete
           </StyledButton>

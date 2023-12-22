@@ -10,24 +10,24 @@ import {
 
 export const ContactForm = ({ addContact }) => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
 
   const handleChange = e => {
     const { name, value } = e.target;
     if (name === 'name') {
       setName(value);
-    } else if (name === 'number') {
-      setNumber(value);
+    } else if (name === 'phone') {
+      setPhone(value);
     }
   };
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    addContact({ name, number });
+    addContact({ name, phone });
 
     setName('');
-    setNumber('');
+    setPhone('');
   };
 
   return (
@@ -45,10 +45,10 @@ export const ContactForm = ({ addContact }) => {
         <StyledLabel>Number </StyledLabel>
         <StyledInput
           type="tel"
-          name="number"
+          name="phone"
           required
           placeholder="Enter phone number"
-          value={number}
+          value={phone}
           onChange={handleChange}
         />
         <StyledButton type="submit">Add contact</StyledButton>
